@@ -72,50 +72,42 @@
 		</div> -->
 
 		<!-- Two -->
-		<section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in"
-			id="first">
-			<div class="container">
-				<div class="row">
-					<div class = "col-md-6">
-						<!-- <div class="content"> -->
-							<h2 class="data-cleanup">Data Cleanup</h2>
-							<p class="data-cleanup">The original dataset was made available by Yelp. This dataset was large and included various types of
-								businesses. Due to the size of this data,
-								we imported the data to Amazon AWS and cleaned up the data through Google Colab.</p>
-							<ul class="actions stacked data-cleanup">
-								<li><a href="https://colab.research.google.com/drive/1I9bEY_uvQ-LCv7jTvYK9EIyTmzyaS8Lx"
-										target=_blank class="button big wide smooth-scroll-middle">Learn More</a></li>
-							</ul>
-						<!-- </div> -->
-						<div class="image">
-							<img src="images/data_exploration.png" alt="" />
-						</div>
-					</div>
-					<div class = "col-md-6">
-						<!-- <div class="content"> -->
-							<h2 class="data-exploration">Data Exploration</h2>
-							<p class="data-exploration">After data cleanup, we started preparing for Machine Learning by one-hot encoding each feature. We
-								also added
-								an additional feature, density of restaurants nearby.
-							</p>
-							<ul class="actions stacked data-exploration">
-								<li><a href="https://public.tableau.com/profile/bosco.sitati#!/vizhome/Project3_15975163220020/Yelp-DataAnalysis-SentimentalAnalysis?publish=yes"
-									target=_blank class="button">Learn More</a></li>
-							</ul>
-						<!-- </div> -->
-						<div class="image">
-							<img src="images/tableau.png" alt="" />
-						</div>
-					</div>
-				</div>
-			</div>			
+		<section class = "spotlight style1 data-cleanup"
+			>
+			<div class="content">
+				<h1>Data Cleanup and Exploration</h1>
+				<p class="major">The purpose of this project was to build a Machine Learning Model that would predict
+					the success of a restaurant
+					based on yelp-classified features of restaurant.</p>
+				<br>
+				<p>After data cleanup, we started preparing for Machine Learning by one-hot encoding each feature. We
+					also added an additional feature, density of restaurants nearby.</p>
+				<ul class="actions stacked">
+					<li><a href="https://colab.research.google.com/drive/1I9bEY_uvQ-LCv7jTvYK9EIyTmzyaS8Lx"
+						target=_blank class="button big wide smooth-scroll-middle">Learn More</a></li>
+				</ul>
+				<!-- <h6 class="presenters">Presented By:</h6> -->
+			</div>
+			<!-- <div>
+				<h6>Presented By:</h6>
+				<ul class="Presenters">
+					<li class="menu">Bill White</li>
+					<li class="menu">Bosco Sitati</li>
+					<li class="menu">Ji Kim</li>
+					<li class="menu">Mansi Majithia</li>
+					<li class="menu">Pauline Li</li>
+				</ul>
+			</div> -->
+			<!-- <div class="image image-cropper profile-pic">
+							<img src="data:image/png;base64,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" alt="" />
+						</div> -->
 		</section>
 
 		<!-- Three -->
 		<!-- <section class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in"
 		id="second"> -->
-			<!-- <div class="content"> -->
-				<!-- <h2>Data Exploration</h2>
+		<!-- <div class="content"> -->
+		<!-- <h2>Data Exploration</h2>
 				<p>After data cleanup, we started preparing for Machine Learning by one-hot encoding each feature. We
 					also added
 					an additional feature, density of restaurants nearby.</p>
@@ -123,23 +115,24 @@
 					<li><a href="https://colab.research.google.com/drive/1I9bEY_uvQ-LCv7jTvYK9EIyTmzyaS8Lx"
 							target=_blank class="button big wide smooth-scroll-middle">Learn More</a></li>
 				</ul> -->
-			<!-- </div> -->
-			<!-- <div class="image">
+		<!-- </div> -->
+		<!-- <div class="image">
 				<img src="images/data_exploration.png" alt="" />
 			</div>
 		</section> -->
 
 		<!-- Four -->
 		<section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in"
-		id="third">
+			id="third">
 			<div class="content">
 				<h2>Tableau</h2>
-				<p>We used Tableau to build visualizations to understand how different features correlated with other features and what
+				<p>We used Tableau to build visualizations to understand how different features correlated with other
+					features and what
 					role they had in the success of restaurants.
 				</p>
 				<ul class="actions stacked">
 					<li><a href="https://public.tableau.com/profile/bosco.sitati#!/vizhome/Project3_15975163220020/Yelp-DataAnalysis-SentimentalAnalysis?publish=yes"
-						target=_blank class="button">Learn More</a></li>
+							target=_blank class="button">Learn More</a></li>
 				</ul>
 			</div>
 			<div class="image">
@@ -148,18 +141,19 @@
 		</section>
 		<!-- four half -->
 		<section class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in"
-		id="fourth">
+			id="fourth">
 			<div class="content">
 				<h2>Machine Learning</h2>
-				<p>We built a Machine Learning Model using the Random Forest Classifier. Next we compared it to other models to confirm
-					Random Forest was the best model.</p>
+				<p>We built a Machine Learning Model by comparing different models. In analyzing Confusion Matrix, we
+					found the Random Forest Classifier to be the
+					best model for our purposes.</p>
 				<ul class="actions stacked">
 					<li><a href="https://colab.research.google.com/drive/12KDRU3iXYiUAHk29lg839A4cY_hmBIMM?usp=sharing"
 							target=_blank class="button">Learn More</a></li>
 				</ul>
 			</div>
 			<div class="image">
-				<img src="images/matrix.png" alt="" />
+				<img id="confusion" src="images/confusion2.png" alt="" />
 			</div>
 		</section>
 		<!-- Five -->
@@ -171,8 +165,8 @@
 					pharetra pretium massa et, hendrerit vestibulum odio lorem ipsum.</p>
 			</div> -->
 
-			<!-- Gallery -->
-			<!-- <div class="gallery style2 medium lightbox onscroll-fade-in">
+		<!-- Gallery -->
+		<!-- <div class="gallery style2 medium lightbox onscroll-fade-in">
 				<article>
 					<a href="images/gallery/fulls/01.jpg" class="image">
 						<img src="images/gallery/thumbs/01.jpg" alt="" />
