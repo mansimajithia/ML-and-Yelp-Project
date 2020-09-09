@@ -135,6 +135,25 @@ restaurantData3.head(25)
 
 Based on our research on restaurant success, we found that restaurant density can also play an important role. We logged the number of restaurants in a half mile radius of each restaurant and dummified it the same  way we dummied number of reviews, through quartiles and binning.
 
+```
+df2=restaurantData3
+
+for index1, row1 in df2.iterrows():
+    num_restaurants = 0
+    min_lat = row1['latitude']-.07/10
+    max_lat = row1['latitude']+.07/10
+    min_long = row1['longitude']-.09/10
+    max_long = row1['longitude']+.09/10
+    df_temp = df2[(df2['latitude']>min_lat) & 
+                  (df2['latitude']<max_lat) & 
+                  (df2['longitude']>min_long) & 
+                  (df2['longitude']<max_long)]
+    num_restaurants = len(df_temp)
+    df2.loc[index1, 'num_restaurants_1mile'] = num_restaurants - 1 # (subtract 1 to exclude self)"
+    
+    
+df2.head()
+```
 Now that we had each feature one-hot encoded, we were ready for Machine Learning. But we also wanted to visually see if there were any correlation between each feature or if there were any trends geographically or otherwise. We used Tableau for this type of analysis.
 
 # Tableau
