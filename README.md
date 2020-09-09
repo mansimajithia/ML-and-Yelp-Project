@@ -157,6 +157,7 @@ df2.head()
 Now that we had each feature one-hot encoded, we were ready for Machine Learning. But we also wanted to visually see if there were any correlation between each feature or if there were any trends geographically or otherwise. We used Tableau for this type of analysis.
 
 # Tableau
+https://public.tableau.com/profile/bosco.sitati#!/vizhome/Project3_15975163220020/Yelp-DataAnalysis-SentimentalAnalysis?publish=yes
 
 We determined that a visual outlook using Tableau would better determine our approach for Machine Learning. One of our goals was to observe frequency and distribution of features across locations. The other was to confirm certain correlations in our feature. And finally to compare feature data between open and close restaurants. And also to run a sentiment analysis of our dataset.
 
