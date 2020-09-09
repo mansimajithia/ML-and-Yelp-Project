@@ -7,6 +7,95 @@ Jupyter Notebook: https://colab.research.google.com/drive/1I9bEY_uvQ-LCv7jTvYK9E
 Our datasource  came from Yelp Open Data. This dataset is a subset of data from 25 states and 8 provinces in Canada from 2018. The original JSON file contains 209,000 rows of records. Since we just wanted to focus on Restaurant Data, we cleaned out the data and filtered to restaurants that contained ‘Restaurant’ under categories. We ended up with 180,000 rows of restaurant data. Next we only wanted restaurants that included the attributes we were looking for. Our final dataset was with 21,000 rows.
 
 There were a lot of attributes, so we discarded like the ambiance of a restaurant. We didn’t think whether a ‘hipster’ ambiance would have effect on the restaurant’s future. Many of the attributes had Boolean value which we assigned as 1 or 0. 
+```
+#=======================================Convert Attributes to 1/0 Features ==================================================#
+
+restaurantData3= restaurantData2 # make a copy of ResData 3
+
+# Get Reservations
+df_attribute = pd.DataFrame([i if i != None else {'RestaurantsReservations':np.NAN} for i in restaurantData3['attributes']])
+restaurantData3['reservations'] = df_attribute['RestaurantsReservations']
+restaurantData3['reservations'] = restaurantData3['reservations'].astype(str).map({'True': 1, 'False': 0})
+
+
+# Get Delivery
+df_attribute = pd.DataFrame([i if i != None else {'RestaurantsDelivery':np.NAN} for i in restaurantData3['attributes']])
+restaurantData3['delivery'] = df_attribute['RestaurantsDelivery']
+restaurantData3['delivery'] = restaurantData3['delivery'].astype(str).map({'True': 1, 'False': 0})
+
+
+# Get Takeout
+df_attribute = pd.DataFrame([i if i != None else {'RestaurantsTakeOut':np.NAN} for i in restaurantData3['attributes']])
+restaurantData3['takeout'] = df_attribute['RestaurantsTakeOut']
+restaurantData3['takeout'] = restaurantData3['takeout'].astype(str).map({'True': 1, 'False': 0})
+
+
+
+# Get Price
+df_attribute = pd.DataFrame([i if i != None else {'RestaurantsPriceRange2':np.NAN} for i in restaurantData3['attributes']])
+restaurantData3['pricerange'] = df_attribute['RestaurantsPriceRange2'].astype(int)
+
+
+
+# Get Accept Credit Cards
+df_attribute = pd.DataFrame([i if i != None else {'BusinessAcceptsCreditCards':np.NAN} for i in restaurantData3['attributes']])
+restaurantData3['acceptcreditcard'] = df_attribute['BusinessAcceptsCreditCards']
+restaurantData3['acceptcreditcard'] = restaurantData3['acceptcreditcard'].astype(str).map({'True': 1, 'False': 0})
+
+
+# Get Outdoor Seating
+df_attribute = pd.DataFrame([i if i != None else {'OutdoorSeating':np.NAN} for i in restaurantData3['attributes']])
+restaurantData3['outdoorseating'] = df_attribute['OutdoorSeating']
+restaurantData3['outdoorseating'] = restaurantData3['outdoorseating'].astype(str).map({'True': 1, 'False': 0})
+
+
+# Get Good For Groups
+df_attribute = pd.DataFrame([i if i != None else {'RestaurantsGoodForGroups':np.NAN} for i in restaurantData3['attributes']])
+restaurantData3['goodForGroups'] = df_attribute['RestaurantsGoodForGroups']
+restaurantData3['goodForGroups'] = restaurantData3['goodForGroups'].astype(str).map({'True': 1, 'False': 0})
+
+
+# Get Good For Kids
+df_attribute = pd.DataFrame([i if i != None else {'GoodForKids':np.NAN} for i in restaurantData3['attributes']])
+restaurantData3['kidsfriendly'] = df_attribute['GoodForKids']
+restaurantData3['kidsfriendly'] = restaurantData3['kidsfriendly'].astype(str).map({'True': 1, 'False': 0})
+#restaurantData3['kidsfriendly'] = restaurantData3['kidsfriendly'].astype(float).round(2)
+
+
+
+# Get happyhour
+df_attribute = pd.DataFrame([i if i != None else {'HappyHour':np.NAN} for i in restaurantData3['attributes']])
+restaurantData3['happyhour'] = df_attribute['HappyHour']
+restaurantData3['happyhour'] = restaurantData3['happyhour'].astype(str).map({'True': 1, 'False': 0})
+
+# BYOB
+df_attribute = pd.DataFrame([i if i != None else {'BYOBCorkage':np.NAN} for i in restaurantData3['attributes']])
+restaurantData3['byobfee'] = df_attribute['BYOBCorkage']
+restaurantData3['byobfee']=restaurantData3['byobfee'].str.contains("no")
+restaurantData3['byobfee'] = restaurantData3['byobfee'].astype(str).map({'True': 1, 'False': 0})
+
+
+# Get Table Service
+df_attribute = pd.DataFrame([i if i != None else {'RestaurantsTableService':np.NAN} for i in restaurantData3['attributes']])
+restaurantData3['tableservice'] = df_attribute['RestaurantsTableService']
+restaurantData3['tableservice'] = restaurantData3['tableservice'].astype(str).map({'True': 1, 'False': 0})
+
+
+# Get Alcohol
+df_attribute = pd.DataFrame([i if i != None else {'Alcohol':np.NAN} for i in restaurantData3['attributes']])
+restaurantData3['alcohol'] = df_attribute['Alcohol']
+restaurantData3['alcohol'] = restaurantData3['alcohol'].str.contains("none")
+restaurantData3['alcohol'] = restaurantData3['alcohol'].astype(str).map({'True': 1, 'False': 0})
+
+
+# WiFi
+df_attribute = pd.DataFrame([i if i != None else {'WiFi':np.NAN} for i in restaurantData3['attributes']])
+restaurantData3['wifi'] = df_attribute['WiFi']
+restaurantData3['wifi'] = restaurantData3['wifi'].str.contains("free")
+restaurantData3['wifi'] = restaurantData3['wifi'].astype(str).map({'True': 1, 'False': 0})
+
+pd.set_option('display.max_columns', None)
+```
 
 There were certain attributes that didn’t have Boolean values such as type of parking, number of reviews, restaurant rating, or restaurant price. For the parking, we turned those into different columns and then one-hot encoded accordingly
 
