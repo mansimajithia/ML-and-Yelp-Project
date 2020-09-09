@@ -200,4 +200,6 @@ We also created a correlation heatmap. Dark red color indicates a significant ne
 
 We also wanted to see which model, logistical regression or Random Forest Classifier is the “better model” to predict restaurant success. We built a confusion matrix model. In creating a confusion matrix model, we found that each model was good at predicting restaurants that would remain open with each being above 90%, but neither did a good job at predicting which model would do a good job fail. Each showed a high propensity of false positive or that over predicting number of restaurants that would remain open. Random Forest Classifier had a 76% positive while Log Reg at 89% False Positive Percent. Therefore we determined that Random Forest had a better predictive model.
 
+![confusion](https://github.com/mansimajithia/ML-and-Yelp-Project/blob/master/images/confusion3.png)
+
 We determined that the nature of high false negative was due to the fact that Yelp drops closed restaurants after 3 months thus eliminating them from our training model.
