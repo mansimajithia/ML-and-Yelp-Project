@@ -111,6 +111,27 @@ restaurantData3['parking_validated'] = restaurantData3['parking_validated'].asty
 ```
 
 For number of reviews we first got the median and then binned them by their quartiles and then dummified each quartile. 
+```
+category = ['review_37', 'review_82', 'review_184', 'review_max'] # Pass bin name
+# Create review_count bins
+restaurantData3['category']=pd.cut(x= restaurantData3['review_count'], bins=[0, 37, 82, 184, 10129],labels=category)
+
+# *********Dummified binned review_count**************
+review_df = pd.get_dummies(restaurantData3["category"])
+review_df.head()
+
+restaurantData3[category] = review_df
+# pd.set_option('display.max_columns', None) # To display all columns
+
+
+# *********Dummified price range**************
+price_df = pd.get_dummies(restaurantData3["pricerange"])
+price_columns=['price_1', 'price_2', 'price_3','price_4']
+restaurantData3[price_columns] = price_df
+price_df.head(100)
+
+restaurantData3.head(25)
+```
 
 Based on our research on restaurant success, we found that restaurant density can also play an important role. We logged the number of restaurants in a half mile radius of each restaurant and dummified it the same  way we dummied number of reviews, through quartiles and binning.
 
