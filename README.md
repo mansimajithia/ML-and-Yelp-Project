@@ -175,6 +175,8 @@ Some observation:
 
 ![analysis](https://github.com/mansimajithia/ML-and-Yelp-Project/blob/master/images/Line%20Graph.png)
 
+![sentiment](https://github.com/mansimajithia/ML-and-Yelp-Project/blob/master/images/Sentiment%20Anaysis.png)
+
 # Machine Learning
 
 Jupyter Notebook: https://colab.research.google.com/drive/12KDRU3iXYiUAHk29lg839A4cY_hmBIMM?usp=sharing
