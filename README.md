@@ -99,6 +99,17 @@ pd.set_option('display.max_columns', None)
 
 There were certain attributes that didn’t have Boolean values such as type of parking, number of reviews, restaurant rating, or restaurant price. For the parking, we turned those into different columns and then one-hot encoded accordingly
 
+```
+parking_columns=['parking_garage', 'parking_lot', 'parking_street', 'parking_valet', 'parking_validated']
+restaurantData3[parking_columns] = cleaned_parking_df
+
+restaurantData3['parking_garage'] = restaurantData3['parking_garage'].astype(float).round(2) # Convert string True/False to float
+restaurantData3['parking_lot'] = restaurantData3['parking_lot'].astype(float).round(2) # Convert string True/False to float
+restaurantData3['parking_street'] = restaurantData3['parking_street'].astype(float).round(2) # Convert string True/False to float
+restaurantData3['parking_valet'] = restaurantData3['parking_valet'].astype(float).round(2) # Convert string True/False to float
+restaurantData3['parking_validated'] = restaurantData3['parking_validated'].astype(float).round(2) # Convert string True/False to float
+```
+
 For number of reviews we first got the median and then binned them by their quartiles and then dummified each quartile. 
 
 Based on our research on restaurant success, we found that restaurant density can also play an important role. We logged the number of restaurants in a half mile radius of each restaurant and dummified it the same  way we dummied number of reviews, through quartiles and binning.
