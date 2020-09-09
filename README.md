@@ -1,4 +1,4 @@
-# Project-3
+# De-Mistyfing Machine Learning through Restaurant Data
 
 # Data Cleaning and Exploration
 Data Source: https://www.yelp.com/dataset
