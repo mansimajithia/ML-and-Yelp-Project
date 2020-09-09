@@ -173,6 +173,8 @@ Some observation:
 
 -Restaurants that had the highest and lowest had the highest rating count. They also had more useful rating count.
 
+![analysis](https://github.com/mansimajithia/ML-and-Yelp-Project/blob/master/images/Line%20Graph.png)
+
 # Machine Learning
 
 Jupyter Notebook: https://colab.research.google.com/drive/12KDRU3iXYiUAHk29lg839A4cY_hmBIMM?usp=sharing
